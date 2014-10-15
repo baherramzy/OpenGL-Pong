@@ -4,10 +4,10 @@
 #include <GL\freeglut.h>
 
 struct Vertex2 {
-	GLfloat x;
-	GLfloat y;
+	float x;
+	float y;
 
-	Vertex2(GLfloat X = 0.0, GLfloat Y = 0.0) : x(X), y(Y) {}
+	Vertex2(float X = 0.0, float Y = 0.0) : x(X), y(Y) {}
 };
 
 #endif

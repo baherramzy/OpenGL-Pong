@@ -23,7 +23,6 @@ void draw() {
 }
 
 void update(int value) {
-	
 	pongGame.play();
 
 	// Call update again after interval

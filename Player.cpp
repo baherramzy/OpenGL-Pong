@@ -1,41 +1,23 @@
-#ifndef PLAYER_T
-#define PLAYER_T
+#include "Player.h"
 
-#include "Quad.cpp"
+Player::Player(float x, float y) : x(x), y(y) {
+	p.createQuad(x, y);
+}
 
-class Player
-{
-private:
-	Quad p;
+void Player::draw() {
+	p.draw();
+}
 
-public:
-	GLfloat x, y;
-	int width = 10, height = 80;
-	Player() {
-		p.createQuad(10.0, 10.0);
-	}
+void Player::moveUp(float s) {
+	p.AddY(s);
+	y = p.getY();
+}
 
-	Player(GLfloat x, GLfloat y) : x(x), y(y) {
-		p.createQuad(x, y);
-	}
+void Player::moveDown(float s) {
+	p.AddY(-s);
+	y = p.getY();
+}
 
-	void draw() {
-		p.draw();
-	}
+Player::~Player() {
 
-	void moveUp(GLfloat s) {
-		p.AddY(s);
-		y = p.getY();
-	}
-
-	void moveDown(GLfloat s) {
-		p.AddY(-s);
-		y = p.getY();
-	}
-
-	~Player() {
-		
-	}
-};
-
-#endif
+}
