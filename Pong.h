@@ -7,7 +7,7 @@
 class Pong
 {
 private:
-	Player *P1, *P2;
+	Player P1, P2;
 	int score_l = 0, score_r = 0;
 	Quad *ball;
 	int GameWidth, GameHeight;

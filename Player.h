@@ -3,11 +3,8 @@
 
 #include "Quad.cpp"
 
-class Player 
+class Player : public Quad
 {
-private:
-	Quad p;
-
 public:
 	float x, y;
 	const int width = 10, height = 80;

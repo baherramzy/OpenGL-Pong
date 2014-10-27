@@ -7,17 +7,19 @@
 class Quad
 {
 private:
+	int width, height;
 	Vertex2 vertices[4];
+	void createQuad();
 public:
-	Quad();
+	Quad(float, float, int, int);
 	void draw();
-	void createQuad(float, float, int, int);
 	void AddX(float);
 	void AddY(float);
-	float getX();
-	float getY();
+	float getLeft();
+	float getRight();
+	float getBottom();
+	float getTop();
 	~Quad();
-
 };
 
 #endif
