@@ -2,6 +2,7 @@
 
 Quad::Quad(float x = 0.0, float y = 0.0, int width = 10, int height = 80)
 	: width(width), height(height) {
+
 	for (Vertex2 v : vertices) {
 		v = Vertex2(0, 0);
 	}
@@ -14,16 +15,12 @@ Quad::Quad(float x = 0.0, float y = 0.0, int width = 10, int height = 80)
 
 void Quad::draw() {
 	glBegin(GL_QUADS);
+	glColor3f(1.0, 1.0, 1.0);
 	for (int i = 0; i < 4; ++i) {
 		glVertex2f(vertices[i].x, vertices[i].y);
 	}
 	glEnd();
 }
-
-//void Quad::createQuad(float x = 0.0, float y = 0.0, int width = 10, int height = 80) {
-//	// Create
-//	
-//}
 
 void Quad::AddX(float dx) {
 	for (int i = 0; i < 4; ++i) {

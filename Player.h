@@ -3,6 +3,8 @@
 
 #include "Quad.cpp"
 
+// Player class represents the racket, responsible for its movement
+
 class Player : public Quad
 {
 public:

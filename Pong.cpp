@@ -21,17 +21,27 @@ void Pong::draw() {
 	ball->draw();
 
 	// Draw score
-	std::string s = std::to_string(score_l) + ":" + std::to_string(score_r);
-	glRasterPos2f(float(GameWidth / 2 - 10), float(GameHeight - 15));
+	std::string s = std::to_string(score_l) + " : " + std::to_string(score_r);
+	glRasterPos2f(GameWidth / 2.0f - 20.0f, GameHeight - 15.0f);
 	glutBitmapString(GLUT_BITMAP_8_BY_13, (const unsigned char*)s.c_str());
+
+	// Draw middle line
+	for (float i = 0.0; i < GameHeight - 20; i += 30.0) {
+		glLineWidth(4.0f);
+		glColor3f(1.0, 1.0, 1.0);
+		glBegin(GL_LINES);
+		glVertex2f(GameWidth / 2.0f, i);
+		glVertex2f(GameWidth / 2.0f, i + 20);
+		glEnd();
+	}
 }
 
 void Pong::updateBall() {
 	ball_temp_x = ball_x;
 	ball_temp_y = ball_y;
 
-	ball_x += (int)(ball_dir_x * ballSpeed);
-	ball_y += (int)(ball_dir_y * ballSpeed);
+	ball_x += ball_dir_x * ballSpeed;
+	ball_y += ball_dir_y * ballSpeed;
 
 	ball->AddX(ball_x - ball_temp_x);
 	ball->AddY(ball_y - ball_temp_y);
@@ -59,8 +69,8 @@ void Pong::updateBall() {
 	if (ball_x < 0) {
 		// Increment right player score and reset ball
 		++score_r;
-		ball_x = (float) GameWidth / 2;
-		ball_y = (float) GameHeight / 2;
+		ball_x = GameWidth / 2.0f;
+		ball_y = GameHeight / 2.0f;
 		ball_dir_x = 1.0f;
 		ball_dir_y = 0.0f;
 
@@ -72,8 +82,8 @@ void Pong::updateBall() {
 	if (ball_x + ballSize > GameWidth) {
 		// Increment left player score and reset ball
 		++score_l;
-		ball_x = (float) GameWidth / 2;
-		ball_y = (float) GameHeight / 2;
+		ball_x = GameWidth / 2.0f;
+		ball_y = GameHeight / 2.0f;
 		ball_dir_x = -1.0f;
 		ball_dir_y = 0.0f;
 

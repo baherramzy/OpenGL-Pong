@@ -4,6 +4,8 @@
 #include "Vertex2.h"
 #include <algorithm>
 
+// Quad is a utility class for drawing rectangle-shaped objects
+
 class Quad
 {
 private:

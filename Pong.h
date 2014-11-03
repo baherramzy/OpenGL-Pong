@@ -4,6 +4,8 @@
 #include "Player.cpp"
 #include <string>
 
+// The Pong class is the game master class, responsible for game logic and asset management
+
 class Pong
 {
 private:

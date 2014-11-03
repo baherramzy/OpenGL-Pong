@@ -3,6 +3,9 @@
 
 #include <GL\freeglut.h>
 
+// Simple vertex structure to represent vertices.
+// Preferred over OpenGL defined vertex types for simplicity.
+
 struct Vertex2 {
 	float x;
 	float y;
